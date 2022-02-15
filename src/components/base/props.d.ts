@@ -1,22 +1,35 @@
-type className = string;
-type handler = () => void;
+type classNameType = string | Array<any> | {[key: string]: any};
+type handlerType = (e?: any) => void;
 
-type baseProps = {
-  className?: className
+type basePropsType = {
+  className?: classNameType,
+  children?: any
 }
 
-export type imageProps = {
+export type iconPropsType = {
+  icon: string
+} & basePropsType
+export type inputPropsType = {
+  type?: 'text' | 'password' | 'email' | 'number',
+  value: string,
+  name: string,
+  placeholder?: string,
+  onInput: handlerType,
+  icon?: string,
+} & basePropsType
+
+export type imagePropsType = {
   src: string,
   alt?: string,
-} & baseProps
+} & basePropsType
 
-export type buttonProps = {
-  children?: any,
+export type buttonPropsType = {
   tag?: string,
-  onClick?: handler,
-} & baseProps
+  theme?: 'white',
+  size?: 'sm',
+  onClick?: handlerType,
+} & basePropsType
 
-export type formProps = {
-  children?: any,
-  onSubmit: handler,
-} & baseProps
+export type formPropsType = {
+  onSubmit: handlerType,
+} & basePropsType

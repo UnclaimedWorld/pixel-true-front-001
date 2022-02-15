@@ -1,3 +1,9 @@
+@import '../../assets/styles/variables';
+@font-face {
+  font-family: 'Klasik';
+  src: url('../../assets/fonts/Klasik/Klasik-Regular.otf');
+  font-weight: 400;
+}
 .login-page {
   display: flex;
   flex-direction: column;
@@ -6,24 +12,26 @@
   height: 100%;
   position: relative;
   z-index: 0;
-  &__background {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+  color: $color-text;
+  background: #FFF3E9 url('./login-01.png') top center/cover no-repeat;
   &__title {
+    margin: 0 0 41px;
     font-size: 32px;
     line-height: 1;
+    font-family: 'Klasik', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 41px;
   }
   &__social-button {
+    width: 100%;
     margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   &__social {
+    padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 25px;
   }
   &__form-body {
@@ -34,22 +42,58 @@
     margin-bottom: 16px;
     padding: 12px 20px 11px;
     border-bottom: 1px solid #FFF3E9;
-    font-weight: 500;
-    line-height: 24px;
+
     text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
   }
   &__form-wrap {
-    margin-bottom: 13px;
     padding: 0 20px 28px;
   }
-  &__link {
+  &__form-button {
+    width: 100%;
+    margin-bottom: 13px;
+  }
+  &__form-link {
     margin-bottom: 6px;
     text-decoration-line: underline;
   }
+  &__form-text {
+    margin: 0;
+  }
+  &__form-input {
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+  }
   &__text {
+    display: block;
     text-align: center;
-    font-weight: 500;
     font-size: 14px;
     line-height: 22px;
+    a {
+      font-weight: 700;
+    }
+  }
+  &__question-button {
+    position: absolute;
+    top: 39px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    display: block;
+    border: 0;
+    padding: 0;
+    background: rgba($color-text, 0.1);
+    color: $color-text;
+    svg {
+      margin: auto;
+      display: block;
+    }
+    &:active {
+      color: $color-primary;
+    }
   }
 }

@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/fonts';
+.app-button {
+  transition: background .25s, transform .25s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: $color-primary;
+  border-radius: 8px;
+  height: 60px;
+
+  color: $color-text;
+  font-family: $font-first;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+
+  &:active {
+    transform: scale(0.95);
+    background: darken($color-primary, 8%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 4px rgba($color-primary, 0.3);
+  }
+
+  &--size-sm {
+    height: 50px;
+    border-radius: 12px;
+  }
+  &--theme-white {
+    background-color: #fff;
+    &:active {
+      background: darken(#fff, 5%);
+    }
+  }
+}

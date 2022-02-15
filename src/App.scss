@@ -1,51 +1,23 @@
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Thin.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Thin.ttf') format('truetype');
-  font-weight: 100;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Light.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Light.ttf') format('truetype');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Regular.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Medium.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Medium.ttf') format('truetype');
-  font-weight: 500;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Semibold.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Semibold.ttf') format('truetype');
-  font-weight: 600;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-Bold.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-Bold.ttf') format('truetype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: 'Manrope';
-  src: url('./assets/fonts/Manrope/Manrope-ExtraBold.woff') format('woff'),
-       url('./assets/fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-}
-
+@import './assets/styles/variables';
 html,
 body, 
 #root,
 .app {
   height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*, *:after, *:before, *:focus {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .container {
@@ -58,8 +30,19 @@ body,
 
 .app {
   color: #573353;
-  font-family: 'Manrope', sans-serif;
+  font-family: $font-first;
   letter-spacing: -0.03em;
   background-color: #FFF3E9;
-  width: 414px;
+  font-weight: 500;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.link-item {
+  &:active {
+    color: $color-primary;
+  }
 }

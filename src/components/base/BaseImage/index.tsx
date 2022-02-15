@@ -1,7 +1,6 @@
-import { imageProps } from "../props"
+import { imagePropsType } from "../props"
+import { createElement } from "react"
 
-export default function BaseImage(props: imageProps) {
-  console.log('../../..' + props.src);
-  let src = require('../../..' + props.src);
-  return <img className={props.className} src={src} alt={props.alt || ''}/>
+export default function BaseImage(props: imagePropsType) {
+  return createElement('img', props, '');
 }

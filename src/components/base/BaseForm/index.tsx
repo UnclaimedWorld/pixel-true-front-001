@@ -1,16 +1,12 @@
 import React, { SyntheticEvent } from "react";
-import { formProps } from "../props";
+import { formPropsType } from "../props";
 
-export default class BaseForm extends React.Component<formProps> {
-  constructor(props: formProps) {
-    super(props);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-  onSubmit(e: SyntheticEvent) {
+export default class BaseForm extends React.Component<formPropsType> {
+  onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     this.props.onSubmit();
   }
   render() {
-    return <form onSubmit={this.onSubmit}>{this.props.children}</form>
+    return React.createElement('form', {...this.props, onSubmit: this.onSubmit}, this.props.children);
   }
 }

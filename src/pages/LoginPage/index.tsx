@@ -1,30 +1,64 @@
+import React from 'react';
 import BaseButton from "../../components/base/BaseButton";
 import BaseForm from "../../components/base/BaseForm";
 import SocialButton from "../../components/login/SocialButton";
-import AppButton from "../../components/shared/AppButton";
-import BaseImage from "../../components/base/BaseImage";
 import './index.scss';
+import { toClassname } from "../../helpers/utils";
+import BaseInput from "../../components/base/BaseInput";
+import BaseIcon from '../../components/base/BaseIcon';
 
-export default function LoginPage() {
-  return (
-    <main className="login-page">
-      <BaseImage src="/pages/LoginPage/login-01.png" className="login-page__background"/>
-      <BaseButton children={
-        <img src={require('../../assets/icons/loupe.svg').default} alt="loupe icon"/>
-      }/>
-      <h2 className="login-page__title">WELCOME TO Monumental habits</h2>
-      <div className="login-page__social container">
-        <SocialButton className="login-page__social-button" type="google"/>
-        <SocialButton type="facebook"/>
-      </div>
-      <div className="login-page__form-body">
-        <h1 className="login-page__form-header">Log in with email</h1>
-        <BaseForm className="login-page__form-wrap" children={
-          <AppButton className="login-page__form-button" children="Login"/>
-        } onSubmit={() => console.log('abc')}/>
-        <a href="/reset" className="login-page__text login-page__form-link">Forgot Password?</a>
-        <p className="login-page__text">Don’t have an account? <a href="/signup">Sign up</a></p>
-      </div>
-    </main>
-  )
+export default class LoginPage extends React.Component {
+  state = {
+    email: '',
+    password: ''
+  }
+  onInput = (e: any) => {
+    this.setState(() => ({
+      [e.target.name]: e.target.value
+    }));
+  }
+  onSubmit = () => {
+    console.log('abc')
+  }
+  render() {
+    return (
+      <main className="login-page">
+        <button className="login-page__question-button">
+          <BaseIcon icon="loupe"/>
+        </button>
+  
+        <h2 className="login-page__title">WELCOME TO<br/> Monumental habits</h2>
+        <div className="login-page__social">
+          <SocialButton className="login-page__social-button" type="google"/>
+          <SocialButton className="login-page__social-button" type="facebook"/>
+        </div>
+        <div className="login-page__form-body">
+          <h1 className="login-page__form-header">Log in with email</h1>
+          <BaseForm className="login-page__form-wrap" onSubmit={this.onSubmit}>
+            <BaseInput 
+              value={this.state.email} 
+              className="login-page__form-input" 
+              type="email" 
+              placeholder="Email" 
+              icon="mail" 
+              name="email"
+              onInput={this.onInput} 
+            />
+            <BaseInput 
+              value={this.state.password} 
+              className="login-page__form-input" 
+              type="password" 
+              placeholder="Password" 
+              icon="lock" 
+              name="password"
+              onInput={this.onInput} 
+            />
+            <BaseButton className="login-page__form-button" children="Login"/>
+            <a href="/reset" className="login-page__text login-page__form-link link-item">Forgot Password?</a>
+            <p className="login-page__text login-page__form-text">Don’t have an account? <a href="/signup" className="link-item">Sign up</a></p>
+          </BaseForm>
+        </div>
+      </main>
+    )
+  }
 }
