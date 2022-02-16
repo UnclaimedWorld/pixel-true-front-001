@@ -25,7 +25,7 @@ export default function SocialButton(props: SocialButtonType) {
   ]);
 
   return (
-  <BaseButton className={className} theme="white" size="sm">
+  <BaseButton className={className} theme="white" size="sm" type="button">
     <div className="social-button__icon">
       <img 
         src={require(`../../../assets/icons/${props.type}.svg`).default} 

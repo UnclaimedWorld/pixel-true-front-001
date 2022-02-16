@@ -22,9 +22,6 @@
     transform: scale(0.95);
     background: darken($color-primary, 8%);
   }
-  &:focus {
-    box-shadow: 0 0 0 4px rgba($color-primary, 0.3);
-  }
 
   &--size-sm {
     height: 50px;
