@@ -1,0 +1,26 @@
+@import '../../assets/styles/variables';
+.home-page {
+}
+.home-banner {
+  border-radius: 12px;
+  padding: 26px 15px;
+  min-height: 146px;
+  background: #fff url('./home-banner-01.png') right bottom/168px no-repeat;
+  &__title {
+    margin: 0;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-family: $font-second;
+  }
+  &__subtitle {
+    margin: 0;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    vertical-align: top;    
+    opacity: 0.5;
+  }
+}
