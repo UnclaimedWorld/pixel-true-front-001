@@ -61,6 +61,9 @@
     width: 100%;
     display: block;
     margin-bottom: 8px;
+    &--last {
+      margin-bottom: 20px;
+    }
   }
   &__text {
     display: block;

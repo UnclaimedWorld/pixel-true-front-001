@@ -5,6 +5,7 @@ import SocialButton from "../../components/login/SocialButton";
 import './index.scss';
 import BaseInput from "../../components/base/BaseInput";
 import BaseIcon from '../../components/base/BaseIcon';
+import PasswordInput from '../../components/pages/PasswordInput';
 
 export default class LoginPage extends React.Component {
   state = {
@@ -43,12 +44,9 @@ export default class LoginPage extends React.Component {
               name="email"
               onInput={this.onInput} 
             />
-            <BaseInput 
+            <PasswordInput
               value={this.state.password} 
-              className="login-page__form-input" 
-              type="password" 
-              placeholder="Password" 
-              icon="lock" 
+              className="login-page__form-input login-page__form-input--last" 
               name="password"
               onInput={this.onInput} 
             />

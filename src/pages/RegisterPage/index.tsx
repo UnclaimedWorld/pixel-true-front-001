@@ -5,6 +5,7 @@ import BaseCheckbox from "../../components/base/BaseCheckbox";
 import BaseImage from "../../components/base/BaseImage";
 import BaseInput from "../../components/base/BaseInput";
 import SocialButton from "../../components/login/SocialButton";
+import PasswordInput from "../../components/pages/PasswordInput";
 import './index.scss';
 
 export default class RegisterPage extends React.Component {
@@ -44,16 +45,12 @@ export default class RegisterPage extends React.Component {
           theme="white"
           placeholder="Email"
         />
-        {this.state.keep}
-        <BaseInput 
+        <PasswordInput
           className="register-page__field register-page__field--last" 
           value={this.state.password} 
-          name="password" 
           onInput={this.onInput} 
-          type="password" 
-          icon="lock"
+          name="password" 
           theme="white"
-          placeholder="Password"
         />
         <BaseCheckbox className="register-page__checkbox" value={this.state.keep} name="keep" onInput={this.onInput}>
           Keep me signed in

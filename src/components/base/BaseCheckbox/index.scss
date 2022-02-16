@@ -26,7 +26,7 @@
   }
   &--checked {
     &:before {
-      background: $color-primary url('../../../assets/icons/check.svg') center/contain no-repeat;
+      background: $color-primary url('../../../assets/icons/check.svg') center/12px 12px no-repeat;
     }
   }
 }

@@ -51,6 +51,7 @@ export default class BaseInput extends React.Component<inputPropsType> {
           type={this.props.type || 'text'} 
           onInput={this.onInput}
         />
+        {this.props.append}
       </label>
     )
   }
