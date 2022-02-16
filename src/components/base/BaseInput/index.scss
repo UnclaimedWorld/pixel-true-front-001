@@ -1,19 +1,21 @@
 @import '../../../assets/styles/variables';
 @import '../../../assets/styles/mixins';
 .app-input {
+  $self: &;
   display: flex;
   align-items: center;
   background: #FFF6ED;
   border-radius: 12px;
-  padding-left: 16px;
   padding-right: 20px;
   color: $color-text;
+  height: 56px;
   input {
+    height: 100%;
     flex-grow: 1;
-    height: 56px;
     background-color: transparent !important;
     border: 0;
     padding: 0;
+    padding-left: 16px;
     font-weight: bold;
     font-size: 16px;
     line-height: 14px;
@@ -31,11 +33,25 @@
     }
   }
   &__icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 32px;
+    height: 100%;
+    width: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #FFF3E9;
+    svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.5;
+    }
   }
   &--focused {
     color: $color-primary;
+    #{$self}__icon svg {
+      opacity: 1;
+    }
+  }
+  &--theme-white {
+    background-color: #fff;
   }
 }

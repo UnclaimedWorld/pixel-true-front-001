@@ -1,9 +1,4 @@
 @import '../../assets/styles/variables';
-@font-face {
-  font-family: 'Klasik';
-  src: url('../../assets/fonts/Klasik/Klasik-Regular.otf');
-  font-weight: 400;
-}
 .login-page {
   display: flex;
   flex-direction: column;
@@ -18,7 +13,7 @@
     margin: 0 0 41px;
     font-size: 32px;
     line-height: 1;
-    font-family: 'Klasik', sans-serif;
+    font-family: $font-second;
     text-transform: uppercase;
     text-align: center;
   }

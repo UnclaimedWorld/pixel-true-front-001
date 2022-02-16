@@ -5,16 +5,24 @@ import './index.scss';
 
 type SocialButtonType = {
   type: 'google' | 'facebook',
+  short?: boolean
 } & basePropsType
 
 export default function SocialButton(props: SocialButtonType) {
   let text = '';
   if(props.type === 'google') {
-    text = 'Continue with Google';
+    text = props.short ? 'Google' : 'Continue with Google';
   } else if(props.type === 'facebook') {
-    text = 'Continue with Facebook';
+    text = props.short ? 'Facebook' : 'Continue with Facebook';
   }
-  const className = toClassname([props.className, 'social-button', 'social-button--' + props.type]);
+  const className = toClassname([
+    props.className, 
+    'social-button', 
+    'social-button--' + props.type, 
+    {
+      'social-button--short': props.short
+    }
+  ]);
 
   return (
   <BaseButton className={className} theme="white" size="sm">

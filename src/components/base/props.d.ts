@@ -6,9 +6,16 @@ type basePropsType = {
   children?: any
 }
 
+export type checkboxPropsType = {
+  value: boolean,
+  name: string,
+  onInput: handlerType,
+} & basePropsType
+
 export type iconPropsType = {
   icon: string
 } & basePropsType
+
 export type inputPropsType = {
   type?: 'text' | 'password' | 'email' | 'number',
   value: string,
@@ -16,6 +23,7 @@ export type inputPropsType = {
   placeholder?: string,
   onInput: handlerType,
   icon?: string,
+  theme?: 'default' | 'white'
 } & basePropsType
 
 export type imagePropsType = {

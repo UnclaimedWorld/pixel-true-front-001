@@ -21,4 +21,10 @@
       height: 54px;
     }
   }
+  &--short {
+    padding-left: 44px;
+    #{$self}__icon {
+      margin-right: 16px;
+    }
+  }
 }

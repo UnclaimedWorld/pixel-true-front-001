@@ -3,7 +3,6 @@ import BaseButton from "../../components/base/BaseButton";
 import BaseForm from "../../components/base/BaseForm";
 import SocialButton from "../../components/login/SocialButton";
 import './index.scss';
-import { toClassname } from "../../helpers/utils";
 import BaseInput from "../../components/base/BaseInput";
 import BaseIcon from '../../components/base/BaseIcon';
 
@@ -14,7 +13,7 @@ export default class LoginPage extends React.Component {
   }
   onInput = (e: any) => {
     this.setState(() => ({
-      [e.target.name]: e.target.value
+      [e.name]: e.value
     }));
   }
   onSubmit = () => {
