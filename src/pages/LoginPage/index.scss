@@ -78,18 +78,6 @@
     position: absolute;
     top: 39px;
     right: 20px;
-    width: 44px;
-    height: 44px;
-    border-radius: 100%;
-    display: block;
-    border: 0;
-    padding: 0;
-    background: rgba($color-text, 0.1);
-    color: $color-text;
-    svg {
-      margin: auto;
-      display: block;
-    }
     &:active {
       color: $color-primary;
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { toClassname } from "../../../helpers/utils";
 import BaseInput from "../../base/BaseInput";
-import { inputPropsType } from "../../base/props";
+import { inputPropsType, inputResultType } from "../../base/props";
 
 export default class PasswordInput extends React.Component<inputPropsType> {
   state: {
@@ -9,7 +9,7 @@ export default class PasswordInput extends React.Component<inputPropsType> {
   } = {
     type: 'password'
   }
-  onInput = (e: any) => {
+  onInput = (e: inputResultType) => {
     this.props.onInput({
       name: this.props.name,
       value: e.value

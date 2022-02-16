@@ -6,13 +6,15 @@ import './index.scss';
 import BaseInput from "../../components/base/BaseInput";
 import BaseIcon from '../../components/base/BaseIcon';
 import PasswordInput from '../../components/pages/PasswordInput';
+import { inputResultType } from '../../components/base/props';
+import { Link } from 'react-router-dom';
 
 export default class LoginPage extends React.Component {
   state = {
     email: '',
     password: ''
   }
-  onInput = (e: any) => {
+  onInput = (e: inputResultType) => {
     this.setState(() => ({
       [e.name]: e.value
     }));
@@ -23,7 +25,7 @@ export default class LoginPage extends React.Component {
   render() {
     return (
       <main className="login-page">
-        <button className="login-page__question-button">
+        <button className="login-page__question-button icon-button">
           <BaseIcon icon="loupe"/>
         </button>
   
@@ -51,8 +53,8 @@ export default class LoginPage extends React.Component {
               onInput={this.onInput} 
             />
             <BaseButton className="login-page__form-button" children="Login"/>
-            <a href="/reset" className="login-page__text login-page__form-link link-item">Forgot Password?</a>
-            <p className="login-page__text login-page__form-text">Don’t have an account? <a href="/signup" className="link-item">Sign up</a></p>
+            <Link to="/recover" className="login-page__text login-page__form-link link-item">Forgot Password?</Link>
+            <p className="login-page__text login-page__form-text">Don’t have an account? <Link to="/register" className="link-item">Sign up</Link></p>
           </BaseForm>
         </div>
       </main>

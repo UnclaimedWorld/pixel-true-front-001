@@ -4,6 +4,7 @@ import BaseButton from "../../components/base/BaseButton";
 import BaseCheckbox from "../../components/base/BaseCheckbox";
 import BaseImage from "../../components/base/BaseImage";
 import BaseInput from "../../components/base/BaseInput";
+import { inputResultType } from "../../components/base/props";
 import SocialButton from "../../components/login/SocialButton";
 import PasswordInput from "../../components/pages/PasswordInput";
 import './index.scss';
@@ -16,7 +17,7 @@ export default class RegisterPage extends React.Component {
     keep: false,
     subscribe: true
   }
-  onInput = (e: any) => {
+  onInput = (e: inputResultType) => {
     this.setState(() => ({
       [e.name]: e.value
     }));
@@ -65,7 +66,7 @@ export default class RegisterPage extends React.Component {
           <SocialButton className="register-page__social" type="facebook" short/>
         </div>
         <p className="register-page__text-signin">
-          Already have an account? <Link to="login">Sign in</Link>
+          Already have an account? <Link to="/login" className="link-item">Sign in</Link>
         </p>
       </main>
     )

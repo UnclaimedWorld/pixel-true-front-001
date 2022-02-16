@@ -36,9 +36,15 @@ export type buttonPropsType = {
   tag?: string,
   theme?: 'white',
   size?: 'sm',
+  type?: 'button' | 'submit',
   onClick?: handlerType,
 } & basePropsType
 
 export type formPropsType = {
   onSubmit: handlerType,
 } & basePropsType
+
+export type inputResultType = {
+  name: string,
+  value: string
+}
