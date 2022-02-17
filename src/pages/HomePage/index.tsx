@@ -1,6 +1,8 @@
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React from "react";
 import BaseImage from "../../components/base/BaseImage";
 import './index.scss';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 const AppHeader = function() {
   return (
@@ -13,7 +15,25 @@ const AppHeader = function() {
 
 export default class HomePage extends React.Component {
   render() {
-    const habitsList = [
+    const datesListOptions = {
+      gap: 6,
+      arrows: false,
+      pagination: false,
+      fixedWidth: 50,
+      height: 50,
+      perMove: 1,
+      padding: { right: 20 }
+    }
+    const habitsListOptions = {
+      gap: 6,
+      arrows: false,
+      pagination: false,
+      fixedWidth: 50,
+      height: 50,
+      perMove: 1,
+      padding: { right: 20 }
+    }
+    const datesList = [
       {
         name: 'sun',
         value: 17
@@ -34,11 +54,104 @@ export default class HomePage extends React.Component {
         name: 'thu',
         value: 21
       },
+      {
+        name: 'thu',
+        value: 21
+      },
+      {
+        name: 'thu',
+        value: 21
+      },
+      {
+        name: 'thu',
+        value: 21
+      },
+      {
+        name: 'thu',
+        value: 21
+      },
+    ].map(date => (
+      <SplideSlide className="dates-list__item">
+        <p className="dates-list__name">{date.name}</p>
+        <p className="dates-list__value">{date.value}</p>
+      </SplideSlide>
+    ))
+    const habitsList = [
+      {
+        name: 'Read a Book',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Exercise',
+        percent: [1, 1, 0.5, 0.5]
+      },
+      {
+        name: 'Wake Up Early',
+        percent: [1, 1, 0.5]
+      },
+      {
+        name: 'Walk Dog',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Read a Book',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Exercise',
+        percent: [1, 1, 0.5, 0.5]
+      },
+      {
+        name: 'Wake Up Early',
+        percent: [1, 1, 0.5]
+      },
+      {
+        name: 'Walk Dog',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Read a Book',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Exercise',
+        percent: [1, 1, 0.5, 0.5]
+      },
+      {
+        name: 'Wake Up Early',
+        percent: [1, 1, 0.5]
+      },
+      {
+        name: 'Walk Dog',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Read a Book',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
+      {
+        name: 'Exercise',
+        percent: [1, 1, 0.5, 0.5]
+      },
+      {
+        name: 'Wake Up Early',
+        percent: [1, 1, 0.5]
+      },
+      {
+        name: 'Walk Dog',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
     ].map(habit => (
-      <li className="dates-list__item">
-        <p className="dates-list__name">{habit.name}</p>
-        <p className="dates-list__value">{habit.value}</p>
-      </li>
+      <section className="home-page__habit-item habit-item">
+        <p className="habit-item__title">{habit.name}</p>
+        <Splide className="habit-item__list" options={habitsListOptions}>
+          {
+            habit.percent.map(percent => (
+              <SplideSlide className="habit-indicator"></SplideSlide>
+            ))
+          }
+        </Splide>
+      </section>
     ))
     return(
       <main className="home-page">
@@ -51,14 +164,11 @@ export default class HomePage extends React.Component {
         </section>
         <section className="home-page__dates-list dates-list">
           <p className="dates-list__title">Habits</p>
-          <ul className="dates-list__list">{habitsList}</ul>
+          <Splide className="dates-list__list" options={datesListOptions}>{datesList}</Splide>
         </section>
-        <section className="habit-item">
-          <p className="habit-item__title">Read A Book</p>
-          <ul className="habit-item__list">
-            <li className="habit-item__item"></li>
-          </ul>
-        </section>
+        <div>
+          {habitsList}
+        </div>
       </main>
     )
   }
