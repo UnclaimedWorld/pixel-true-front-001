@@ -78,6 +78,22 @@ export default class HomePage extends React.Component {
         name: 'Walk Dog',
         percent: [1, 1, 0.5, 0.5, 1]
       },
+      {
+        name: 'Read a Book',
+        percent: [1, 1, 0.4, 0.65, 1]
+      },
+      {
+        name: 'Exercise',
+        percent: [1, 1, 0.5, 0.5]
+      },
+      {
+        name: 'Wake Up Early',
+        percent: [1, 1, 0.5]
+      },
+      {
+        name: 'Walk Dog',
+        percent: [1, 1, 0.5, 0.5, 1]
+      },
     ].map(habit => (
       <section key={habit.name} className="home-page__habit-item habit-item">
         <p className="habit-item__title">{habit.name}</p>
