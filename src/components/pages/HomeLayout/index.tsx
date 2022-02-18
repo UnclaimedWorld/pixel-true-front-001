@@ -33,7 +33,7 @@ export default class HomeLayout extends React.Component {
       <div className="home-layout">
         <Outlet/>
         <footer className="footer">
-          <Link className="footer__add" to="/"></Link>
+          <Link className="footer__add" to="/add"></Link>
           <nav className="footer__wrap">
             {footerLinks}
           </nav>

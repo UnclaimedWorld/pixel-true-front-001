@@ -5,15 +5,6 @@ import './index.scss';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { toClassname } from "../../helpers/utils";
 
-const AppHeader = function() {
-  return (
-    <header className="header">
-      <h1 className="header__heading">Homepage</h1>
-      <BaseImage className="header__avatar" src="/avatar-01.jpg" alt="avatar"/>
-    </header>
-  )
-}
-
 export default class HomePage extends React.Component {
   render() {
     const datesListOptions = {
@@ -78,22 +69,6 @@ export default class HomePage extends React.Component {
         name: 'Walk Dog',
         percent: [1, 1, 0.5, 0.5, 1]
       },
-      {
-        name: 'Read a Book',
-        percent: [1, 1, 0.4, 0.65, 1]
-      },
-      {
-        name: 'Exercise',
-        percent: [1, 1, 0.5, 0.5]
-      },
-      {
-        name: 'Wake Up Early',
-        percent: [1, 1, 0.5]
-      },
-      {
-        name: 'Walk Dog',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
     ].map(habit => (
       <section key={habit.name} className="home-page__habit-item habit-item">
         <p className="habit-item__title">{habit.name}</p>
@@ -118,7 +93,10 @@ export default class HomePage extends React.Component {
     ))
     return(
       <main className="home-page">
-        <AppHeader/>
+        <header className="header">
+          <h1 className="header__heading">Homepage</h1>
+          <BaseImage className="header__avatar" src="/avatar-01.jpg" alt="avatar"/>
+        </header>
         <section className="home-page__banner home-banner">
           <h2 className="home-banner__title">
             We first make our habits,<br/> and then our habits<br/> makes us.

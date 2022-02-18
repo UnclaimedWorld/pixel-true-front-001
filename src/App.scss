@@ -61,4 +61,7 @@ body {
   border: 0;
   padding: 0;
   color: $color-text;
+  &--theme-dark {
+    background: rgba($color-text, 0.1);
+  }
 }

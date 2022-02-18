@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import { RecoverPage } from './pages/RecoverPage';
 import HomeLayout from './components/pages/HomeLayout';
 import HomePage from './pages/HomePage';
+import AddPage from './pages/AddPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/recover" element={<RecoverPage/>}/>
         <Route path="/" element={<HomeLayout/>}>
           <Route path="home" element={<HomePage/>}/>
+          <Route path="add" element={<AddPage/>}/>
         </Route>
       </Routes>
     </div>
