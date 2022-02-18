@@ -3,6 +3,7 @@ import React from "react";
 import BaseImage from "../../components/base/BaseImage";
 import './index.scss';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { toClassname } from "../../helpers/utils";
 
 const AppHeader = function() {
   return (
@@ -54,24 +55,8 @@ export default class HomePage extends React.Component {
         name: 'thu',
         value: 21
       },
-      {
-        name: 'thu',
-        value: 21
-      },
-      {
-        name: 'thu',
-        value: 21
-      },
-      {
-        name: 'thu',
-        value: 21
-      },
-      {
-        name: 'thu',
-        value: 21
-      },
     ].map(date => (
-      <SplideSlide className="dates-list__item">
+      <SplideSlide key={date.name + date.value} className="dates-list__item">
         <p className="dates-list__name">{date.name}</p>
         <p className="dates-list__value">{date.value}</p>
       </SplideSlide>
@@ -79,55 +64,7 @@ export default class HomePage extends React.Component {
     const habitsList = [
       {
         name: 'Read a Book',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Exercise',
-        percent: [1, 1, 0.5, 0.5]
-      },
-      {
-        name: 'Wake Up Early',
-        percent: [1, 1, 0.5]
-      },
-      {
-        name: 'Walk Dog',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Read a Book',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Exercise',
-        percent: [1, 1, 0.5, 0.5]
-      },
-      {
-        name: 'Wake Up Early',
-        percent: [1, 1, 0.5]
-      },
-      {
-        name: 'Walk Dog',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Read a Book',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Exercise',
-        percent: [1, 1, 0.5, 0.5]
-      },
-      {
-        name: 'Wake Up Early',
-        percent: [1, 1, 0.5]
-      },
-      {
-        name: 'Walk Dog',
-        percent: [1, 1, 0.5, 0.5, 1]
-      },
-      {
-        name: 'Read a Book',
-        percent: [1, 1, 0.5, 0.5, 1]
+        percent: [1, 1, 0.4, 0.65, 1]
       },
       {
         name: 'Exercise',
@@ -142,12 +79,22 @@ export default class HomePage extends React.Component {
         percent: [1, 1, 0.5, 0.5, 1]
       },
     ].map(habit => (
-      <section className="home-page__habit-item habit-item">
+      <section key={habit.name} className="home-page__habit-item habit-item">
         <p className="habit-item__title">{habit.name}</p>
         <Splide className="habit-item__list" options={habitsListOptions}>
           {
-            habit.percent.map(percent => (
-              <SplideSlide className="habit-indicator"></SplideSlide>
+            habit.percent.map((percent, idx) => (
+              <SplideSlide 
+                key={idx} 
+              >
+                <div className="habit-indicator">
+                  { percent < 0.6 ? (<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4.13594C0 0.648916 4.15084 -1.16845 6.71312 1.19673L26 19L43.8033 38.2869C46.1685 40.8492 44.3511 45 40.8641 45H12C5.37258 45 0 39.6274 0 33V4.13594Z" fill="currentColor"/>
+                  </svg>) : (<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="12" fill="currentColor"/>
+                  </svg>)}
+                </div>
+                </SplideSlide>
             ))
           }
         </Splide>

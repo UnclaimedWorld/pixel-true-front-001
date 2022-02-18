@@ -23,7 +23,7 @@ export default class HomeLayout extends React.Component {
         link: '/settings'
       },
     ].map(({icon, link}) => (
-      <NavLink className={({isActive}: any) => toClassname( ['footer__link', { 
+      <NavLink key={icon} className={({isActive}: any) => toClassname( ['footer__link', { 
         'footer__link--active': isActive
       }])} to={ link }>
         <img src={require(`../../../assets/images/${icon}-icon.svg`).default} alt=""/>

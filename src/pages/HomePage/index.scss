@@ -139,13 +139,16 @@
   }
 }
 .habit-indicator {
-  background: var(--color, #{$color-primary});
+  color: var(--color, #{$color-primary});
   border-radius: 12px;
   width: 50px;
   height: 50px;
   padding: 2px;
   position: relative;
-  background-clip: content-box;
+  svg {
+    width: 100%;
+    display: block;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -153,7 +156,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: var(--color, #{$color-primary});
+    background: currentColor;
     opacity: 0.1;
     border-radius: inherit;
   }
