@@ -24,7 +24,8 @@ export type inputPropsType = {
   onInput: handlerType,
   icon?: string,
   theme?: 'default' | 'white',
-  append?: any
+  append?: any,
+  size?: "sm"
 } & basePropsType
 
 export type imagePropsType = {

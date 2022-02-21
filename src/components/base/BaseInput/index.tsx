@@ -31,7 +31,8 @@ export default class BaseInput extends React.Component<inputPropsType> {
       this.props.className,
       {
         'app-input--focused': this.state.focused,
-        ['app-input--theme-' + this.props.theme]: this.props.theme
+        ['app-input--theme-' + this.props.theme]: this.props.theme,
+        ['app-input--size-' + this.props.size]: this.props.size,
       }
     ]);
     const parsedAttrs = {} as {[key: string]: any};
