@@ -5,6 +5,7 @@ import './index.scss';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { toClassname } from "../../helpers/utils";
 import HabitIndicator from "../../components/pages/HabitIndicator";
+import TestButton from "../../components/base/test";
 
 export default class HomePage extends React.Component {
   render() {
@@ -98,6 +99,7 @@ export default class HomePage extends React.Component {
           <p className="dates-list__title">Habits</p>
           <Splide className="dates-list__list" options={datesListOptions}>{datesList}</Splide>
         </section>
+        {/* <TestButton red>Hello world</TestButton> */}
         <div>
           {habitsList}
         </div>

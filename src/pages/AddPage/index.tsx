@@ -2,17 +2,37 @@ import React from "react";
 import BaseButton from "../../components/base/BaseButton";
 import BaseIcon from "../../components/base/BaseIcon";
 import BaseInput from "../../components/base/BaseInput";
+import BaseSwitch from "../../components/base/BaseSwitch";
 import { inputResultType } from "../../components/base/props";
-import HabitIndicator from "../../components/pages/HabitIndicator";
+import HabitFrequency, { habitValueType } from "../../components/pages/AddPage/HabitFrequency";
 import './index.scss';
 
 export default class AddPage extends React.Component {
   state = {
-    name: ''
+    name: '',
+    notification: true,
+    frequency: {
+      sun: 0,
+      mon: 0,
+      tue: 0.5,
+      wed: 1,
+      thu: 1,
+      fri: 0,
+      sat: 0.5
+    } as habitValueType
   }
   onInput = (e: inputResultType) => {
+    console.log(e.name);
     this.setState(() => ({
       [e.name]: e.value
+    }))
+  }
+  onFrequencyInput = (e: inputResultType) => {
+    this.setState((state: typeof this.state) => ({
+      frequency: {
+        ...state.frequency,
+        [e.name]: e.value
+      }
     }))
   }
   render() {
@@ -38,13 +58,7 @@ export default class AddPage extends React.Component {
             <BaseIcon icon="book-reader"/>
           </BaseButton>
         </div>
-        <div className="add-page__field habit-frequency">
-          <div className="habit-frequency__title">Habit Frequency</div>
-          <div className="habit-frequency__date">
-            <div className="habit-frequency__date-name">Sun</div>
-            <HabitIndicator className="habit-frequency__date-value"/>
-          </div>
-        </div>
+        <HabitFrequency className="add-page__field" value={this.state.frequency} onClick={this.onFrequencyInput}/>
         <BaseButton className="add-page__field add-field" size="sm" theme="white">
           <p className="add-field__title">Reminder</p>
           <div className="add-field__link">
@@ -54,7 +68,7 @@ export default class AddPage extends React.Component {
         </BaseButton>
         <div className="add-page__field add-page__field--last add-field">
           <p className="add-field__title">Notification</p>
-          <div>10:00AM</div>
+          <BaseSwitch value={this.state.notification} name="notification" onInput={this.onInput}/>
         </div>
         <section className="add-page__footer habit-banner">
           <img className="habit-banner__icon"  src={require('./habit-icon.png').default} alt="" />

@@ -21,7 +21,7 @@ export default class BaseCheckbox extends React.Component<checkboxPropsType> {
       'base-checkbox',
       this.props.className,
       {
-        'base-checkbox--checked': this.state.checked
+        'base-checkbox--checked': this.props.value
       }
     ])
     return (
